@@ -8,7 +8,6 @@
       justify-content: center;
       align-items: center;
       min-width: 588px;
-      background-color: black;
       color:white;
     }
 
@@ -48,25 +47,33 @@
     <div class="number-display">0</div>
     <img
       class="clickable-image"
-      src="./original.png"
+      src="./change.png"
       alt="Click Me"
       onclick="handleIncrement()"
     />
   </div>
 
   <script>
+    
     let count = 0;
-
+    if(count==0){
+      document.body.style.backgroundColor = 'black';
+    };
     function handleIncrement() {
       count++;
       updateNumberDisplay(count);
 
       const image = document.querySelector(".clickable-image");
-      image.src = "./change.png";
+      image.src = "./original.png";
 
       setTimeout(() => {
-        image.src = "./original.png";
+        image.src = "./change.png";
       }, 100);
+      let hex = count.toString(16);
+      hex = String(hex);
+      hex = '#'+hex;
+      document.body.style.backgroundColor = hex ;
+      console.log(hex);
     }
 
     function updateNumberDisplay(count) {
