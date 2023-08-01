@@ -47,7 +47,7 @@
     <div class="number-display">0</div>
     <img
       class="clickable-image"
-      src="./change.png"
+      src="./original.png"
       alt="Click Me"
       onclick="handleIncrement()"
     />
@@ -64,10 +64,10 @@
       updateNumberDisplay(count);
 
       const image = document.querySelector(".clickable-image");
-      image.src = "./original.png";
+      image.src = "./change.png";
 
       setTimeout(() => {
-        image.src = "./change.png";
+        image.src = "./original.png";
       }, 100);
       let hex = count.toString(16);
       hex = String(hex);
